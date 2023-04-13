@@ -55,12 +55,13 @@ app.post('/rsvps', (req, res) => {
   const insertQuery =
     'INSERT INTO rsvps (first_name, last_name, email, rsvp) VALUES (?, ?, ?, ?);'
   const selectQuery = 'SELECT rsvp, email FROM rsvps where email = ?'
-  db.query(selectQuery, req.body.email, (err, result) => {
+  db.query(selectQuery, req.body.email, (err, result, field) => {
     if (err) {
       console.log(err)
     } else {
       if (result.length > 0) {
-        console.log('result ', result)
+        console.log('results ', result[0])
+        console.log('field ', field)
         res.send({
           msg: `You have already rsvped ${result[0].rsvp ? 'yes' : 'no'}`,
         })
