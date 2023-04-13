@@ -60,7 +60,7 @@ app.post('/rsvps', (req, res) => {
       console.log(err)
     } else {
       if (result.length > 0) {
-        console.log('results ', result[0])
+        console.log('results ', result)
         console.log('field ', field)
         res.send({
           msg: `You have already rsvped ${result[0].rsvp ? 'yes' : 'no'}`,
