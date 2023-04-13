@@ -15,8 +15,7 @@ const db = mysql.createPool({
   multipleStatements: true,
   connectionLimit: 10,
   ssl: {
-    rejectUnauthorized: true,
-    ca: fs.readFileSync(`${process.cwd()}/ca-certificate.crt`.toString()),
+    rejectUnauthorized: false,
   },
 })
 
