@@ -11,7 +11,7 @@ const RsvpForm = () => {
   const submit = useCallback(() => {
     console.log(fname, lname, email, rsvp)
     axios
-      .post('http://localhost:3000/rsvps', {
+      .post(`/rsvps`, {
         first_name: fname,
         last_name: lname,
         email,
