@@ -28,7 +28,7 @@ const RsvpForm = () => {
         toast.success(msg, {
           position: toast.POSITION.BOTTOM_RIGHT,
           hideProgressBar: true,
-          icon: '💫',
+          icon: '🌟',
           className: 'bg-[#0FB367] text-white',
         })
       })
